@@ -1,7 +1,7 @@
 {
     "name": "Плагин по интеграции chatgpt на сайт sdo.tusur.ru",
     "description": "t.me/tarodictrl",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "manifest_version": 3,
     "action": {
       "default_popup": "pages/gpt.html"
@@ -13,8 +13,7 @@
         ],
         "js": [
           "js/gpt.js",
-          "js/get.js",
-          "js/loader.js"
+          "js/sdo.js"
         ],
         "run_at": "document_start"
       }

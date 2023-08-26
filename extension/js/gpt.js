@@ -5,6 +5,7 @@ function getAnswer(content, block, count=10) {
     }
     const url = "https://free.churchless.tech/v1/chat/completions"
     var xmlHttp = new XMLHttpRequest();
+    block.style.display = "block";
     chrome.storage.sync.get(['token', 'model'], function (data) {
         xmlHttp.open("POST", url, false);
         xmlHttp.setRequestHeader("Content-Type", "application/json")
