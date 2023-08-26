@@ -1,5 +1,8 @@
 
-function getAnswer(content, block) {
+function getAnswer(content, block, count=10) {
+    if (count == 0) {
+        return false;
+    }
     const url = "https://free.churchless.tech/v1/chat/completions"
     var xmlHttp = new XMLHttpRequest();
     chrome.storage.sync.get(['token', 'model'], function (data) {
@@ -23,9 +26,14 @@ function getAnswer(content, block) {
                 return xmlHttp.response;
             }
             catch(e) {
-                getAnswer(content, block);
+                getAnswer(content, block, count-1);
             }
         }
-        xmlHttp.send(JSON.stringify(data))
+        try {
+            xmlHttp.send(JSON.stringify(data))
+        }
+        catch(e) {
+            getAnswer(content, block, count-1);
+        }
     })
 }

@@ -4,5 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var button = document.getElementById("question-button")
     button.addEventListener("click", function(){
         getAnswer(content.value, answerArea);
+        answerArea.value = "";
     })
 })
