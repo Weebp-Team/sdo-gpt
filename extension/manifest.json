@@ -3,7 +3,6 @@
     "description": "t.me/tarodictrl",
     "version": "0.1.0",
     "manifest_version": 3,
-    "options_page": "pages/options.html",
     "action": {
       "default_popup": "pages/gpt.html"
     },
